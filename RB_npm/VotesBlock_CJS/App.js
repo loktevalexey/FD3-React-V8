@@ -1,7 +1,7 @@
-﻿import React from 'react';
-import ReactDOM from 'react-dom';
+﻿const React=require('react');
+const ReactDOM=require('react-dom');
 
-import VotesBlock from './components/VotesBlock';
+const VotesBlock=require('./components/VotesBlock');
 
 const questionText='Как вы относитесь к программированию?';
 const answersArr=require('./answers.json');

@@ -12,7 +12,7 @@ ReactDOM.render(
     question={questionText}
     answers={answersArr}
     deffreeanswertext={defaultFreeAnswerText}
-    startWorkMode={1}
+    workMode={2}
   />
   , document.getElementById('container') 
 );

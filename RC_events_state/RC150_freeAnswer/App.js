@@ -11,8 +11,7 @@ ReactDOM.render(
   <VotesBlock 
     question={questionText}
     answers={answersArr}
-    deffreeanswertext={defaultFreeAnswerText}
-    startWorkMode={1}
+    workMode={1}
   />
   , document.getElementById('container') 
 );

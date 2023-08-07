@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 
 import VotesBlock from './components/VotesBlock';
 
-let questionText='Как вы относитесь к программированию?';
-let answersArr=require('./answers.json');
-let defaultFreeAnswerText="???";
+const questionText='Как вы относитесь к программированию?';
+import answersArr from './answers.json';
+const defaultFreeAnswerText="???";
 
 ReactDOM.render(
   <VotesBlock 
