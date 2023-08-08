@@ -36,8 +36,7 @@ class VotesBlock extends React.Component {
         <VotesQuestion question={this.props.question}/>
         <div className='Answers'>{answersCode}</div>
       </div>
-    )
-    ;
+    );
 
   }
 

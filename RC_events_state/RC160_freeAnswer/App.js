@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import VotesBlock from './components/VotesBlock';
 
 const questionText='Как вы относитесь к программированию?';
-const answersArr=require('./answers.json');
-const defaultFreeAnswerText="???";
+
+import answersArr from './answers.json';
 
 ReactDOM.render(
   <VotesBlock 
@@ -15,4 +15,3 @@ ReactDOM.render(
   />
   , document.getElementById('container') 
 );
-

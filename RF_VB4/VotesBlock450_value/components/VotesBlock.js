@@ -89,8 +89,7 @@ class VotesBlock extends React.Component {
           <input type='button' value='проголосовать' onClick={this.vote} />
         }
       </div>
-    )
-    ;
+    );
 
   }
 

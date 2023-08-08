@@ -1,16 +1,8 @@
 ﻿import React from 'react';
-import PropTypes from 'prop-types';
 
 import './VotesAnswer.css';
 
 class VotesAnswer extends React.Component {
-
-  static propTypes = {
-    code: PropTypes.number.isRequired,
-    count: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-    workMode: PropTypes.number.isRequired,
-  };
 
   render() {
 
