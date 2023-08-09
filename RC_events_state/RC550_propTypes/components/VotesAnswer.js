@@ -32,16 +32,12 @@ class VotesAnswer extends React.Component {
         <div>
           <label className='VotesBlockAnswer'>
             <input type='radio' value={this.props.code} name='voteanswer'
-              checked={this.props.selectedAnswerCode==this.props.code}
-              onClick={this.answerClicked}
-            />
+                   onClick={this.answerClicked} />
             <span>{this.props.text}</span>
             {
               (this.props.freeanswer) &&
               <input type='text' name='votefreeanswer' className='FreeAnswer'
-                defaultValue={this.props.freeanswertext} onChange={this.freeAnswerTextChanged}
-                disabled={this.props.selectedAnswerCode!=this.props.code}
-              />
+                value={this.props.freeanswertext} onChange={this.freeAnswerTextChanged} />
             }
           </label>
         </div>

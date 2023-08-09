@@ -11,14 +11,15 @@ class VotesBlock extends React.Component {
   static propTypes = {
     startWorkMode: PropTypes.number.isRequired,
     question: PropTypes.string.isRequired,
-    answers:PropTypes.arrayOf(
-      PropTypes.shape({
-        code: PropTypes.number.isRequired,
-        count: PropTypes.number.isRequired,
-        text: PropTypes.string.isRequired,
-        freeanswer: PropTypes.bool,
-      })
-    ),
+    answers:PropTypes.array,
+    // answers:PropTypes.arrayOf(
+    //   PropTypes.shape({
+    //     code: PropTypes.number.isRequired,
+    //     count: PropTypes.number.isRequired,
+    //     text: PropTypes.string.isRequired,
+    //     freeanswer: PropTypes.bool,
+    //   })
+    // ),
     deffreeanswertext: PropTypes.string.isRequired,
   };
 
@@ -31,17 +32,6 @@ class VotesBlock extends React.Component {
   answerSelected = (code) => {
     console.log('выбран ответ с кодом '+code);
     this.setState( {selectedAnswerCode:code} );
-  };
-
-  vote = () => {
-    console.log('голосование завершено, выбран ответ с кодом '+this.state.selectedAnswerCode);
-
-    this.props.answers.forEach( answer => {
-      if ( answer.code==this.state.selectedAnswerCode )
-        answer.count++;
-    } );
-
-    this.setState( {workMode:2} );
   };
 
   freeAnswerTextChanged = (fat) => {
@@ -57,7 +47,6 @@ class VotesBlock extends React.Component {
         freeanswer={v.freeanswer} freeanswertext={this.state.freeanswertext}
         cbSelected={this.answerSelected}
         cbFreeAnswerTextChanged={this.freeAnswerTextChanged}
-        selectedAnswerCode={this.state.selectedAnswerCode}
         workMode={this.state.workMode}
       />
     );
@@ -66,10 +55,6 @@ class VotesBlock extends React.Component {
       <div className='VotesBlock'>
         <VotesQuestion question={this.props.question}/>
         <div className='Answers'>{answersCode}</div>
-        {
-          ((this.state.workMode==1)&&this.state.selectedAnswerCode) &&
-          <input type='button' value='проголосовать' onClick={this.vote} />
-        }
       </div>
     );
 

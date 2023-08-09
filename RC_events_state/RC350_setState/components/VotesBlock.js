@@ -35,7 +35,7 @@ class VotesBlock extends React.Component {
     const answersCode=this.props.answers.map( v =>
       <VotesAnswer key={v.code}
         text={v.text} count={v.count} code={v.code}
-        freeanswer={v.freeanswer} freeanswertext={this.state.freeanswertext}
+        freeanswer={v.freeanswer}
         cbFreeAnswerTextChanged={this.freeAnswerTextChanged}
         workMode={this.state.workMode}
       />
