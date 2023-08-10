@@ -5,7 +5,6 @@ import './VotesBlock.css';
 
 import VotesQuestion from './VotesQuestion';
 import VotesAnswer from './VotesAnswer';
-import ColorFrame from './ColorFrame';
 
 class VotesBlock extends React.Component {
 
@@ -34,13 +33,8 @@ class VotesBlock extends React.Component {
     this.setState( {selectedAnswerCode:code} );
   };
 
-  vote = () => {
-    console.log('голосование завершено, выбран ответ с кодом '+this.state.selectedAnswerCode);
-    this.setState( {workMode:2} );
-  };
-
-  freeAnswerTextChanged = (fat) => { 
-    console.log('VotesBlock: текст свободного ответа изменён - '+fat); 
+  freeAnswerTextChanged = (fat) => {
+    console.log('VotesBlock: текст свободного ответа изменён - '+fat);
     this.setState( {freeanswertext:fat} );
   };
 
@@ -52,7 +46,7 @@ class VotesBlock extends React.Component {
         freeanswer={v.freeanswer} freeanswertext={this.state.freeanswertext}
         cbSelected={this.answerSelected}
         cbFreeAnswerTextChanged={this.freeAnswerTextChanged}
-        selectedAnswerCode={this.state.selectedAnswerCode}
+        selectedFlag={this.state.selectedAnswerCode===v.code}
         workMode={this.state.workMode}
       />
     );
@@ -60,19 +54,7 @@ class VotesBlock extends React.Component {
     return (
       <div className='VotesBlock'>
         <VotesQuestion question={this.props.question}/>
-        <ColorFrame color="red">
-          <div className='Answers'>{answersCode}</div>
-        </ColorFrame>
-        {/* <ColorFrame color="red" 
-          children={<div className='Answers'>{answersCode}</div>} 
-        /> */}
-        {/* <ColorFrame color="red">
-          { 2 }
-        </ColorFrame> */}
-        {
-          ((this.state.workMode==1)&&this.state.selectedAnswerCode) &&
-          <input type='button' value='проголосовать' onClick={this.vote} />
-        }
+        <div className='Answers'>{answersCode}</div>
       </div>
     );
 

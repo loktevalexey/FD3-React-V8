@@ -38,12 +38,6 @@ class VotesBlock extends React.Component {
 
   vote = () => {
     console.log('голосование завершено, выбран ответ с кодом '+this.state.selectedAnswerCode);
-
-    this.props.answers.forEach( answer => {
-      if ( answer.code==this.state.selectedAnswerCode )
-        answer.count++;
-    } );
-
     this.setState( {workMode:2} );
   };
 

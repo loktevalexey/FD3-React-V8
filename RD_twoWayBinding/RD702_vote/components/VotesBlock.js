@@ -26,7 +26,7 @@ class VotesBlock extends React.Component {
     selectedAnswerCode: null,
     freeanswertext:this.props.deffreeanswertext,
     workMode:this.props.startWorkMode,
-    visibleQuestionNum: 1,
+    answers: this.props.answers,
   };
 
   answerSelected = (code) => {
@@ -36,29 +36,22 @@ class VotesBlock extends React.Component {
 
   vote = () => {
     console.log('голосование завершено, выбран ответ с кодом '+this.state.selectedAnswerCode);
-    this.setState( {workMode:2} );
+    const answers=this.state.answers;
+    answers.forEach( answer => {
+      if ( answer.code===this.state.selectedAnswerCode )
+          answer.count++; // вообще-то так нельзя - это МУТАЦИЯ стейта, но об этом позже
+    } );
+    this.setState( {workMode:2, answers:answers} );
   };
 
-  freeAnswerTextChanged = (fat) => { 
-    console.log('VotesBlock: текст свободного ответа изменён - '+fat); 
+  freeAnswerTextChanged = (fat) => {
+    console.log('VotesBlock: текст свободного ответа изменён - '+fat);
     this.setState( {freeanswertext:fat} );
   };
 
-  showRedQuestion = () => {
-    this.setState({visibleQuestionNum:1});
-  };
-
-  showBlueQuestion = () => {
-    this.setState({visibleQuestionNum:2});
-  };
-
-  showBorderedQuestion = () => {
-    this.setState({visibleQuestionNum:3});
-  };
-  
   render() {
 
-    const answersCode=this.props.answers.map( v =>
+    const answersCode=this.state.answers.map( v =>
       <VotesAnswer key={v.code}
         text={v.text} count={v.count} code={v.code}
         freeanswer={v.freeanswer} freeanswertext={this.state.freeanswertext}
@@ -71,23 +64,7 @@ class VotesBlock extends React.Component {
 
     return (
       <div className='VotesBlock'>
-        <input type="button" value="красный" onClick={this.showRedQuestion} />
-        <input type="button" value="синий" onClick={this.showBlueQuestion} />
-        <input type="button" value="в рамке" onClick={this.showBorderedQuestion} />
-        {
-          (this.state.visibleQuestionNum==1) &&
-          <VotesQuestion key={1} question={this.props.question} auxClassName="VotesQuestionRed" />
-        }
-        {
-          (this.state.visibleQuestionNum==2) &&
-          <VotesQuestion key={1} question={this.props.question} auxClassName="VotesQuestionBlue" />
-        }
-        {
-          (this.state.visibleQuestionNum==3) &&
-          <div style={{border:"solid green 2px"}}>
-            <VotesQuestion key={1} question={this.props.question} />
-          </div>
-        }
+        <VotesQuestion question={this.props.question}/>
         <div className='Answers'>{answersCode}</div>
         {
           ((this.state.workMode==1)&&this.state.selectedAnswerCode) &&
