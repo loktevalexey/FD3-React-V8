@@ -7,4 +7,4 @@ function add(v1:any,v2:any):any {
 
 console.log( add(5,7) );
 console.log( add("a","b") );
-// console.log( add(5,"b") ); // ошибка
+// console.log( add(5,"b") ); // ошибка - нет подходящего варианта перегрузки

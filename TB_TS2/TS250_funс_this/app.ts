@@ -1,3 +1,4 @@
+// автотипизация car1
 
 let car1={
 
@@ -6,13 +7,14 @@ let car1={
     
     show: function(prefix:string) {
         console.log(prefix+" "+this.num+" "+this.model);
-        // обращаемся к несуществующему свойству - ошибки нет, т.к. this:any
+        // обращаемся к несуществующему свойству price - ошибки нет, т.к. this:any
         console.log(prefix+" "+this.price); 
     }
 
 };
 car1.show("INFO #1:");
 
+// явная типизация car2
 
 type Car={
     num:string,
@@ -27,12 +29,14 @@ let car2:Car={
     
     show: function(prefix:string):void {
         console.log(prefix+" "+this.num+" "+this.model);
-        // обращаемся к несуществующему свойству - ошибки нет, т.к. this:any
+        // обращаемся к несуществующему свойству price - ошибки нет, т.к. this:any
         console.log(prefix+" "+this.price); 
     }
 
 };
 car2.show("INFO #2:");
+
+// автотипизация car3, с явной типизацией сработает тоже
 
 let car3:Car={
     

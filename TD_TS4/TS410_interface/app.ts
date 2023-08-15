@@ -1,12 +1,12 @@
 
-interface ISpeed {
+interface IMovable {
 
     start(_speed:number):void;
     stop():void;
    
 }
 
-class Car implements ISpeed {
+class Car implements IMovable {
 
     speed:number;
     numb:string;

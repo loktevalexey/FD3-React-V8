@@ -36,7 +36,7 @@ class MobileCompany extends React.PureComponent {
     newClients.forEach( (c,i) => {
       if ( c.id==clientId ) {
       //if ( c.id==clientId && c.balance!==newBalance ) {
-        let newClient={...c}; // копия хэша изменившегося клиента
+        let newClient={...c}; // копия объекта изменившегося клиента
         newClient.balance=newBalance;
         newClients[i]=newClient;
       }
@@ -50,7 +50,7 @@ class MobileCompany extends React.PureComponent {
     let newClients=[...this.state.clients]; // копия самого массива клиентов
     newClients.forEach( (c,i) => {
       if ( c.id==clientId && c.balance!=newBalance ) {
-        let newClient={...c}; // копия хэша изменившегося клиента
+        let newClient={...c}; // копия объекта изменившегося клиента
         newClient.balance=newBalance;
         newClients[i]=newClient;
         changed=true;

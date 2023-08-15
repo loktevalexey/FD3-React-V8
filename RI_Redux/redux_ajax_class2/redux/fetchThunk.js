@@ -2,9 +2,9 @@ import { countriesLoadingAC, countriesErrorAC, countriesSetAC } from "./countrie
 
 function countriesThunkAC(dispatch) {
     // Как и любой action creator, countriesThunkAC должен вернуть action,
-    // только action будет не хэш, а ФУНКЦИЯ.
+    // только action будет не объект, а ФУНКЦИЯ.
     // Все middleware стоят ДО редьюсеров, их задача - преобразовывать или фильтровать action-ы.
-    // Конкретно middleware "thunk", если обнаруживает что action - функция а не хэш, 
+    // Конкретно middleware "thunk", если обнаруживает что action - функция а не объект, 
     // ВЫПОЛНЯЕТ эту функцию и не пропускает её дальше, к редьюсерам.
     return function() {
         dispatch( countriesLoadingAC() );
