@@ -1,5 +1,4 @@
 
-
 namespace LoggerSpace {
 
     class LogItem {

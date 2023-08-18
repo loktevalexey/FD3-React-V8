@@ -68,3 +68,9 @@ function trainer<Trn extends ITransp>(trn:Trn):void {
 trainer<Car>(car1);
 
 trainer<Ship>(ship1);
+
+// тИповый аргумент не нужен, если TS может его сам вывести из типов аргументов функции:
+
+trainer(car1);
+
+trainer(ship1);
