@@ -1,8 +1,8 @@
 
-var n:null=null;
+let n:null=null;
 
-var u:undefined=undefined;
+let u:undefined=undefined;
 
-var varstr:string=null;
-var varnum:number=undefined;
-var varbool:boolean=null;
+let varstr:string=null;
+let varnum:number=undefined;
+let varbool:boolean=null;

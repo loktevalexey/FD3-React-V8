@@ -1,9 +1,9 @@
-var b:boolean=true;
+let b:boolean=true;
 
-var s1:string="Hello";
-// var s2:string=5; // ошибка
+let s1:string="Hello";
+// let s2:string=5; // ошибка
 
-var n:number=555;
+let n:number=555;
 
-var a1:any=5;
-var a2:any="fff";
+let a1:any=5;
+let a2:any="fff";

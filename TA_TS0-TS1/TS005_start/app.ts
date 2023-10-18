@@ -1,3 +1,3 @@
-var n:number=5;
-var s:string="hello ";
+let n:number=5;
+let s:string="hello ";
 console.log(s+n);

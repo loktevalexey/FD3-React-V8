@@ -1,5 +1,5 @@
 
-var temperature=5;
+let temperature=5;
 console.log(temperature);
 
 temperature=7;

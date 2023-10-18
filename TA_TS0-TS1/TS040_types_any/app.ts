@@ -1,5 +1,5 @@
 
-var temperature:any=5;
+let temperature:any=5;
 console.log(temperature);
 
 temperature="hot";

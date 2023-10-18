@@ -1,5 +1,5 @@
 
-var position:string|number=5;
+let position:string|number=5;
 console.log(position);
 
 position="top";
