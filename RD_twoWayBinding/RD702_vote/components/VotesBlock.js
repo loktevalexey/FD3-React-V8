@@ -36,10 +36,10 @@ class VotesBlock extends React.Component {
 
   vote = () => {
     console.log('голосование завершено, выбран ответ с кодом '+this.state.selectedAnswerCode);
-    const answers=this.state.answers;
+    const answers=JSON.parse(JSON.stringify(this.state.answers)); // чтобы не мутировать стейт!
     answers.forEach( answer => {
       if ( answer.code===this.state.selectedAnswerCode )
-          answer.count++; // вообще-то так нельзя - это МУТАЦИЯ стейта, но об этом позже
+          answer.count++;
     } );
     this.setState( {workMode:2, answers:answers} );
   };

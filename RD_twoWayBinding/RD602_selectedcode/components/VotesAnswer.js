@@ -28,19 +28,20 @@ class VotesAnswer extends React.Component {
   render() {
 
     if ( this.props.workMode==1 ) {
+      const isSelected=this.props.selectedAnswerCode==this.props.code;
       return (
         <div>
           <label className='VotesBlockAnswer'>
             <input type='radio' value={this.props.code} name='voteanswer'
               onChange={this.answerClicked} />
-            <span style={{color:(this.props.selectedAnswerCode===this.props.code)?'red':'black'}}>
+            <span style={{color:isSelected?'red':'black'}}>
                 {this.props.text}
             </span>
             {
               (this.props.freeanswer) &&
               <input type='text' name='votefreeanswer' className='FreeAnswer'
                 value={this.props.freeanswertext} onChange={this.freeAnswerTextChanged}
-                disabled={this.props.selectedAnswerCode!=this.props.code}
+                disabled={!isSelected}
               />
             }
           </label>
