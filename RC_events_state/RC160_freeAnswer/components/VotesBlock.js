@@ -1,5 +1,4 @@
 ﻿import React from 'react';
-import PropTypes from 'prop-types';
 
 import './VotesBlock.css';
 
@@ -7,19 +6,6 @@ import VotesQuestion from './VotesQuestion';
 import VotesAnswer from './VotesAnswer';
 
 class VotesBlock extends React.Component {
-
-  static propTypes = {
-    workMode: PropTypes.number.isRequired,
-    question: PropTypes.string.isRequired,
-    answers:PropTypes.arrayOf(
-      PropTypes.shape({
-        code: PropTypes.number.isRequired,
-        count: PropTypes.number.isRequired,
-        text: PropTypes.string.isRequired,
-        freeanswer: PropTypes.bool,
-      })
-    ),
-  };
 
   render() {
 
