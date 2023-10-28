@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import VotesQuestion from './VotesQuestion';
 import VotesAnswer from './VotesAnswer';
+
 import {voteEvents} from './events';
 
 import './VotesBlock.css';
