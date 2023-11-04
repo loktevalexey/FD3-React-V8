@@ -7,6 +7,11 @@ import VotesQuestion from './VotesQuestion';
 import VotesAnswer from './VotesAnswer';
 import { withColorBackground } from './withColorBackground';
 
+let VotesQuestionWithBG=withColorBackground("cyan")(VotesQuestion);
+
+//const withCyanBackground=withColorBackground("cyan");
+//let VotesQuestionWithBG=withCyanBackground(VotesQuestion);
+
 class VotesBlock extends React.Component {
 
   static propTypes = {
@@ -56,11 +61,6 @@ class VotesBlock extends React.Component {
         workMode={this.state.workMode}
       />
     );
-
-    let VotesQuestionWithBG=withColorBackground("cyan")(VotesQuestion);
-
-    //const withCyanBackground=withColorBackground("cyan");
-    //let VotesQuestionWithBG=withCyanBackground(VotesQuestion);
 
     return (
       <div className='VotesBlock'>

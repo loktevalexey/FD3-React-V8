@@ -22,6 +22,11 @@ class MobileClient extends React.Component {
 
   shouldComponentUpdate = (newProps,newState) => {
     return (newProps.fio!==this.props.fio)||(newProps.balance!==this.state.balance);
+
+    // let oldActive=this.state.balance>=0;
+    // let newActive=newProps.balance>=0;
+    // return (newProps.fio!==this.props.fio)||(oldActive!==newActive); 
+
   };
 
   render() {
