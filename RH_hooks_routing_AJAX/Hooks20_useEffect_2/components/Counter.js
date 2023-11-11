@@ -5,11 +5,17 @@ import "./Counter.css";
 export default props => {
 
   const [cnt, setCnt] = useState(0);
+  console.log("render cnt",cnt);
 
   useEffect(
     ()=>{
-      const timer=setInterval(()=>setCnt(prevCnt=>prevCnt+1),1000);
-      //const timer=setInterval(()=>setCnt(cnt+1),1000);
+      console.log("useEffect cnt",cnt);
+      //const timer=setInterval(()=>setCnt(prevCnt=>prevCnt+1),1000);
+      const timer=setInterval(()=>setCnt(cnt+1),1000);
+      // const timer=setInterval(()=>{
+      //   console.log("timer cnt",cnt);
+      //   setCnt(cnt+1);
+      // },1000);
       console.log("таймер запущен");
       return ()=>{
         clearTimeout(timer);
