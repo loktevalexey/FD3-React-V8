@@ -10,8 +10,8 @@ const BorderedDiv = styled.div`
 
 const BackgroundedDiv = styled.div`
   border-radius: 5px;
-  ${ attrs => css`
-    background: ${attrs.ccc==="eng"?"red":"green"};
+  ${ props => css`
+    background: ${props.ccc==="eng"?"red":"green"};
   `}
 `;
 

@@ -1,17 +1,13 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import { Third } from "./Third";
 
-export const Second = () => {
+export const Second = React.memo(() => {
 
-  const memoizeedRender=useMemo( () => {
-    console.log("render Second component");
+  console.log("render Second component");
 
-    return (
-      <Third/>
-    );
-  }, [] );
+  return (
+    <Third/>
+  );
 
-  return memoizeedRender;
-
-};
+});

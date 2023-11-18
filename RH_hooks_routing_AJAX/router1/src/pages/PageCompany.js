@@ -7,7 +7,7 @@ import { appData } from '../appData';
 export const PageCompany = () => {
           
   return (
-    <MobileCompany name={appData.companyName} clients={appData.clients} />
+    <MobileCompany name={appData.companyName} />
   );
     
 }
