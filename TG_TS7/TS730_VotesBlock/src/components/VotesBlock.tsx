@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useState, ReactElement} from 'react';
 
 import './VotesBlock.css';
 
@@ -42,7 +42,13 @@ const VotesBlock:FC<VotesBlockPropTypes> = ({startAnswers,question,deffreeanswer
     setFreeanswertext(fat);
   };
 
-  const answersCode=answers.map( v =>
+  // тип ReactElement - объект, описывающий React-тег или компонент, т.е. кусок VDOM
+  // тип JSX.Element - примерно то же самое
+  // тип ReactNode - всё что может рендерить React, т.е.:
+  //   ReactElement | ReactFragment | string | number | null | undefined | boolean
+  //   либо массив элементов этих же типов
+
+  const answersCode:ReactElement[]=answers.map( v =>
     <VotesAnswer key={v.code}
       text={v.text} count={v.count} code={v.code}
       freeanswer={v.freeanswer} freeanswertext={freeanswertext}
@@ -52,7 +58,7 @@ const VotesBlock:FC<VotesBlockPropTypes> = ({startAnswers,question,deffreeanswer
       workMode={workMode}
     />
   );
-
+  
   return (
     <div className='VotesBlock'>
       <VotesQuestion question={question}/>
