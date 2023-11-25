@@ -1,6 +1,6 @@
 const initState={
   apples: 7,  // how many apples there are
-}
+};
 
 function fruitsReducer(state=initState,action) {
   switch (action.type) {
