@@ -13,7 +13,7 @@ class Ship {
         return this._speed;
     }
 
-    set speed(value:number) { // в сеттере НЕ надо писать :void
+    set speed(value:number) { // в сеттере НЕ надо описывать тип возвращаемого значения
         this._speed=value;
         if ( value )
             this._sailState=true;

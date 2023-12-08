@@ -48,7 +48,10 @@ function trainer(tr:Transp):void {
         tr.start(100);
         tr.stop();
     }
-    tr.show();
+    tr.show(); 
+    // TS не возражает - ведь у Transp есть метод show
+    // а в браузере вызовется метод show класса Car, 
+    // т.к. фактически в tr - объект класса Car
     console.log('training finished');
 }
 

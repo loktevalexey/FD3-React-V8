@@ -21,7 +21,7 @@ class Transp {
 
 class Car extends Transp {
 
-    constructor(_serialNumber:string,public carNumber:string) {
+    constructor(_serialNumber:string, public carNumber:string) {
         super(_serialNumber); 
         // свойство carNumber автоматически создано 
         // с модификатором public и ему присвоено
