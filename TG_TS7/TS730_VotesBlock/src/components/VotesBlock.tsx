@@ -1,4 +1,4 @@
-import React, {FC, useState, ReactElement} from 'react';
+import React, {FC, useState, ReactElement, ReactNode} from 'react';
 
 import './VotesBlock.css';
 

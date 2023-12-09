@@ -13,7 +13,7 @@ function App() {
       question={questionText}
       startAnswers={answersArr}
       deffreeanswertext={defaultFreeAnswerText}
-      startWorkMode={"VOTE"}
+      startWorkMode="VOTE"
       />
   );
 }

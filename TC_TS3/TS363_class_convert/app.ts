@@ -34,9 +34,10 @@ class House {
 // мы можем присвоить его переменной класса Car, преобразование типа не требуется
 let car1:Car=new House(21,9*4);
 car1.show(); // вызовется show класса House
+// let house1:House=new Car(2870); // ошибка
+
 console.log('car1 это Car?', car1 instanceof Car); // false
 console.log('car1 это House?', car1 instanceof House); // true
-
 // работа instanceof не имеет отношения к TS, 
 // он работает уже в браузере, анализируя цепочку прототипов
 

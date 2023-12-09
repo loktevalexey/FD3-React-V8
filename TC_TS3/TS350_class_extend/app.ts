@@ -39,12 +39,7 @@ class Car extends Transp {
 
 class Ship extends Transp {
     
-    sailState:boolean;
-
-    constructor() {
-        super();
-        this.sailState=false;
-    }
+    sailState:boolean=false;
 
     setSail(_state:boolean):void {
         this.sailState=_state;

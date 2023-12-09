@@ -40,7 +40,7 @@ async function downloadData():Promise<CompanyType> {
     throw new Error("HTTP error "+response.status);
   }
   else {
-    const data=await response.json();
+    const data:CompanyType=await response.json();
     // в data - пришедшие в ответе данные
     return data;
   }  
@@ -54,6 +54,7 @@ export const CompanyInfo = () => {
   const [companyData,setCompanyData] = useState<CompanyType|null>(null);
 
   useEffect( ()=>{
+
     (async ()=>{
       try {
         setDownloadStatus(DownloadStatus.LOADING);
@@ -65,6 +66,7 @@ export const CompanyInfo = () => {
         setDownloadStatus(DownloadStatus.ERROR);
       }
     })();
+
   },[]);
 
   return (

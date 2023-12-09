@@ -20,7 +20,7 @@ function getLength2(value:string|number):number {
         return <number>value;
     }
     if ( (typeof(value))[0]==="s" ) {
-        // return value.length; // нельзя
+        //return value.length; // нельзя
         return (<string>value).length;
     }
 }

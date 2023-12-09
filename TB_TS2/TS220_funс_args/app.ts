@@ -4,7 +4,7 @@ function test1(arg1:number,arg2:string):void {
 }
 
 test1(11,"f");
-// test1(11); // ошибка
+//test1(11); // ошибка
 
 
 function test2(arg1:number,arg2?:string,arg3?:boolean):void {
@@ -19,7 +19,7 @@ test2(22);
 function test3(arg1:number,arg2:string="hello",arg3?:boolean):void {
     console.log("test3: arg1="+arg1+" arg2="+arg2+" arg3="+arg3);
 }
-    
+
 test3(33,"sss",false);
 test3(33,"sss");
 test3(33);

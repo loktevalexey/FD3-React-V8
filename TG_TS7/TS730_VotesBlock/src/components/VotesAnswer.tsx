@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ChangeEvent } from 'react';
 
 import './VotesAnswer.css';
 
@@ -29,8 +29,8 @@ const VotesAnswer:FC<VotesAnswerPropType> = ({
     cbSelected(code);
   };
 
-  const freeAnswerTextChanged = (eo:React.ChangeEvent<HTMLInputElement>) => {
-    cbFreeAnswerTextChanged((eo.target as HTMLInputElement).value);
+  const freeAnswerTextChanged = (eo:ChangeEvent<HTMLInputElement>) => {
+    cbFreeAnswerTextChanged(eo.target.value);
   };
 
   if ( workMode==="VOTE" ) {

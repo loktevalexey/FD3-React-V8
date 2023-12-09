@@ -6,7 +6,7 @@ class Car {
 
     constructor(_num:string);
     constructor(_num1:number,_num2:string);
-    constructor(_num1:any,_num2?:any) {
+    constructor(_num1:string|number,_num2?:string) {
 
         if ( typeof(_num1)==="string" ) {
             // в _num1 - полный номер

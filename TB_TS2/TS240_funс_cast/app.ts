@@ -18,11 +18,15 @@ let f3:(v:number|string)=>void=null;
 f1=test1;
 // f1=test2; // ошибка
 f1=test3;
+f1("hello");
 
-// f2=test1; // ошибка
+//f2=test1; // ошибка
 f2=test2;
 f2=test3;
+f2(5);
 
 f3=test1; // должна бы быть ошибка, но нет!
+f3(5);
 f3=test2; // должна бы быть ошибка, но нет!
+f3("hello");
 f3=test3;

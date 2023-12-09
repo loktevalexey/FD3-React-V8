@@ -51,3 +51,8 @@ let car3={
 
 };
 car3.show("INFO #3:");
+
+const showRef=car3.show;
+//showRef("INFO #3:"); // ошибка
+showRef.call(car3,"INFO #3:");
+// showRef.call({},"INFO #3:"); // должна быть ошибка, но нет

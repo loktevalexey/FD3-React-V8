@@ -19,8 +19,8 @@ class Transp {
 
 let transp1:Transp=new Transp;
 
-console.log( transp1 instanceof Transp );
-console.log( transp1 instanceof String );
+console.log( transp1 instanceof Transp ); // true
+console.log( transp1 instanceof String ); // false
 
 function trainer(tr:Transp):void {
     for ( let testnum:number=0; testnum<1000; testnum++ ) {
